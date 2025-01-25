@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voucher Creation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 400px;
+            margin: auto; /* Center the container */
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 100%; /* Full width */
+            max-width: 250px; /* Set max width for larger screens */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%; /* Full width for button */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Admin Login</h2>
+        <div class="input-container">
+            <input type="password" id="adminPassword" placeholder="Enter admin password" />
+        </div>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        const adminPassword = "1381"; // Change this to your desired password
+
+        // Auto sign-in functionality
+        window.onload = function() {
+            const savedPassword = localStorage.getItem('adminPassword');
+            if (savedPassword === adminPassword) {
+                login(); // Automatically log in if the password is saved
+            }
+        };
+
+        function login() {
+            const passwordInput = document.getElementById('adminPassword').value;
+            if (passwordInput === adminPassword) {
+                // Redirect to the voucher creation page
+                window.location.href = 'create voucher.html';
+            } else {
+                alert('Incorrect password. Access denied.');
+            }
+        }
+    </script>
+
+</body>
+</html>
