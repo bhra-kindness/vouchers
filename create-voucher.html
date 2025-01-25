@@ -54,7 +54,7 @@
         let vouchers = [];
 
         function generateSerialNumber() {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            const characters = '0123456789';
             let serial = 'BIA'; // Start with "BIA"
             for (let i = 0; i < 7; i++) { // 7 more characters
                 serial += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -64,7 +64,7 @@
 
         function generatePin() {
             let pin = '';
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 pin += Math.floor(Math.random() * 10).toString();
             }
             return pin;
