@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Voucher</title>
+    <title>Create Vouchers</title>
     <style>
-      body {font-family: Arial, sans-serif;
-            margin: 0;
-            border-radius: 5px;
-            background: powderblue;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column; /* Added for better header/content flow */}
-
-     .navbar {
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          border-radius: 5px;
+          background: powderblue;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+      }
+           .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,24 +25,18 @@
             background: burlywood;
             z-index: 1000;}
   nav img  {width: 20em;
-            max-width: 4em;
-            height: 3em;
+            max-width: 5em;
+            height: 4.5em;
             margin-right: 0em;
-            position: relative;
-            right: 3em;
             border-radius: 50%;
             display: block;
             text-align: center;}
         #admin {background: white;
-                max-width: 100%;
                 padding: 5px; 
                 border-radius: 2em;
-                position: relative;
-                right: 2em;
-                color: blue; 
-                font-size: 11px;}
+                color: blue; font-size: 11px}
 
-        .right_us {margin-right: 1em;}
+        .right_us {margin-right: 0em}
         #input    {border-radius: 2em; width: 60%; max-width: 25em;
                    border: none; margin-top: 0em; padding: 5px;
                    margin-right: 1em;}
@@ -50,80 +45,65 @@
                    border-radius: 0 50%;
                    background: green;
                    padding: 6.5px 5px;}
-
-.container {max-width: 300px;
-            position: relative;
-            top: 7em;
-            align-items: center;
-            margin-top: 10em;
-            padding: 5em 5em;
-            margin: auto; /* Center the container */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
-
-        /* Media Queries */
-        /* Tablet styles */
-        @media screen and (min-width: 481px) {
-            body {font-size: 16px;}
-            nav img {position: relative;
-                     right: 0;}
-            input, button {max-width: 100%; /* Full width on small screens */}
-            .footer {position:relative;
-                     height: 5%;}
-            .container {max-width: 300px;
-                       position: relative;
-                       top: 5em;}}
-
-        /* Desktop styles */
-        @media screen and (min-width: 769px) {
-            body {font-size: 18px;}
-            input, button {max-width: 100%; /* Full width on small screens */}
-            #adminPassword {max-width: 600px;}
-            nav img {position: relative;
-                     right: 0;}
-            .container {width: 100%;
-                        max-width: 400px;
-                        position: relative;
-                        top: 30em;
-                        padding: em;
-                        margin: auto; /* Centering */}}
-
-    #create {padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            width: 100%; /* Full width for button */}
-    #create:hover {background-color: #45a049;}
-        .voucher-info { margin-top: 20px;
-            display: none;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #fff;}
-    #home  {background: red; width: 5em;
+      .container {
+          max-width: 800px;
+          margin: 7em auto;
+          padding: 5em;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+        .voucher {background: white;
+          border: 1px solid #ccc;
+          font-family: Times New Roman, sans-serif;
+          font-size: 12px;
+          padding: 5px; /* Reduced padding */
+          margin: 5px;
+          width: 60mm; /* Reduced width */
+          height: 30mm; /* Reduced height */
+          box-sizing: border-box;
+      }
+      #create {
+          padding: 10px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+      }
+      #create:hover { background-color: #45a049; }
+      #printButton {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #008CBA;
+          color: white;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+      }
+      #printButton:hover { background-color: #007B9E; }
+      .voucher-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr); /* Two columns */
+          gap: 10px; /* Space between vouchers */
+      }
+       #home  {background: red; width: 5em;
             text-align: center; margin-top: 1em;
             border-radius: 50px;
             padding: 3px}
-    a      {color: white;}
+    a      {color: yellow;}
 
-
-   .footer {height: 5%;
-            display: flex;
-            padding: 10px 0px 25px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: burlywood;
-            z-index: 1000;}
-        #audio {height: 20px;
-                width: 90px;
-                position: relative;
-                left: 120px}
-        marquee {background: white;
-                 width: 30%;
-                 position: relative;
-                 left: 40%;
-                 height: 1.3em;}
+      footer {
+          height: 5%;
+          display: flex;
+          padding: 10px 0px 25px;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background: burlywood;
+          z-index: 1000;
+      }
+      #audio { height: 20px; width: 90px; position: relative; left: 120px; }
+      marquee { background: white; width: 30%; position: relative; left: 40%; height: 1.3em;
+              color: black; }
     </style>
 </head>
 <body>
@@ -139,19 +119,15 @@
     </nav>
 
     <div class="container">
-        <h2>Generate Voucher</h2>
-        <button onclick="createVoucher()" id="create">Create Voucher</button>
-        <div class="voucher-info" id="voucherInfo">
-            <h3>Your BIA Admission voucher details are:</h3>
-            <p><strong>Serial Number: </strong><span id="serialNumber"></span></p>
-            <p><strong>PIN: </strong><span id="pin"></span></p>
-        </div>
+        <h2>Generate Vouchers</h2>
+        <button onclick="createVouchers()" id="create">Create Vouchers</button>
+        <button onclick="printVouchers()" id="printButton" style="display:none;">Print Vouchers</button>
+        <div class="voucher-container" id="vouchersContainer"></div>
+
         <div id="home"><a href="index.html">Home</div>
     </div>
-    
-    <script>
-        let vouchers = [];
 
+    <script>
         function generateSerialNumber() {
             const characters = '0123456789';
             let serial = 'BIA'; // Start with "BIA"
@@ -169,16 +145,50 @@
             return pin;
         }
 
-        function createVoucher() {
-            const serial = generateSerialNumber();
-            const pin = generatePin();
-            vouchers.push({ serial, pin, used: false });
-            document.getElementById('serialNumber').innerText = serial;
-            document.getElementById('pin').innerText = pin;
-            document.getElementById('voucherInfo').style.display = 'block';
+        function createVouchers() {
+            const container = document.getElementById('vouchersContainer');
+            container.innerHTML = ''; // Clear previous vouchers
+            for (let i = 0; i < 14; i++) {
+                const serial = generateSerialNumber();
+                const pin = generatePin();
+                const voucher = document.createElement('div');
+                voucher.className = 'voucher';
+                voucher.innerHTML = `
+                    <h3>Your BIA Admission Voucher</h3>
+                    <p><strong>Serial Number: </strong>${serial}</p>
+                    <p><strong>PIN: </strong>${pin}</p>
+                `;
+                container.appendChild(voucher);
+            }
+            document.getElementById('printButton').style.display = 'block'; // Show print button
+        }
 
-            // Store vouchers in localStorage
-            localStorage.setItem('vouchers', JSON.stringify(vouchers));
+        function printVouchers() {
+            const vouchersHTML = document.getElementById('vouchersContainer').innerHTML;
+            const printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write('<html><head><title>Print Vouchers</title>');
+            printWindow.document.write(`
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 20px; }
+                    .voucher-container { 
+                        display: grid; 
+                        grid-template-columns: repeat(2, 1fr); /* Two columns */
+                        gap: 10px; /* Space between vouchers */
+                    }
+                    .voucher {font-family:Times New Roman,sans-serif;
+                        border: 1px solid #ccc;
+                        padding: 0px 10px 9px; /* Reduced padding */
+                        width: 80mm; /* Reduced width */
+                        height: 35mm; /* Reduced height */
+                        box-sizing: border-box;
+                    }
+                </style>
+            `);
+            printWindow.document.write('<body>');
+            printWindow.document.write('<div class="voucher-container">' + vouchersHTML + '</div>');
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
         }
     </script>
 
