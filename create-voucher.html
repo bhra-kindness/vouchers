@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>Create Vouchers</title>
+    <title>Generate Vouchers</title>
     <style>
       body {
           font-family: Arial, sans-serif;
@@ -46,9 +46,10 @@
                    background: green;
                    padding: 6.5px 5px;}
       .container {
-          max-width: 800px;
-          margin: 7em auto;
-          padding: 5em;
+          max-width: 50em;
+          margin: 8em auto;
+          padding: 2em;
+          margin-bottom: 10em;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
         .voucher {background: white;
@@ -57,8 +58,8 @@
           font-size: 12px;
           padding: 5px; /* Reduced padding */
           margin: 5px;
-          width: 60mm; /* Reduced width */
-          height: 30mm; /* Reduced height */
+          width: 50mm; /* Reduced width */
+          height: 25mm; /* Reduced height */
           box-sizing: border-box;
       }
       #create {
@@ -82,8 +83,8 @@
       #printButton:hover { background-color: #007B9E; }
       .voucher-container {
           display: grid;
-          grid-template-columns: repeat(2, 1fr); /* Two columns */
-          gap: 10px; /* Space between vouchers */
+          grid-template-columns: repeat(3, 1fr); /* Two columns */
+          gap: 1px; /* Space between vouchers */
       }
        #home  {background: red; width: 5em;
             text-align: center; margin-top: 1em;
@@ -95,7 +96,7 @@
           height: 5%;
           display: flex;
           padding: 10px 0px 25px;
-          position: fixed;
+          position: relative;
           bottom: 0;
           width: 100%;
           background: burlywood;
@@ -148,15 +149,15 @@
         function createVouchers() {
             const container = document.getElementById('vouchersContainer');
             container.innerHTML = ''; // Clear previous vouchers
-            for (let i = 0; i < 14; i++) {
+            for (let i = 0; i < 27; i++) {
                 const serial = generateSerialNumber();
                 const pin = generatePin();
                 const voucher = document.createElement('div');
                 voucher.className = 'voucher';
                 voucher.innerHTML = `
-                    <h3>Your BIA Admission voucher details are;</h3>
+                    <b>Your BIA Admission Voucher details are;</b>
                     <p><strong>Serial Number: </strong>${serial}</p>
-                    <p><strong>PIN: </strong>${pin}</p>
+                    <strong>PIN: </strong>${pin}
                 `;
                 container.appendChild(voucher);
             }
@@ -166,18 +167,18 @@
         function printVouchers() {
             const vouchersHTML = document.getElementById('vouchersContainer').innerHTML;
             const printWindow = window.open('', '', 'height=600,width=800');
-            printWindow.document.write('<html><head><title>Print Vouchers</title>');
+            printWindow.document.write('<html><head><title>BIA Vouchers</title>');
             printWindow.document.write(`
                 <style>
-                    body { font-family: Arial, sans-serif; padding: 20px; }
+                    body { font-family: Arial, sans-serif; padding: 5px; }
                     .voucher-container { 
                         display: grid; 
-                        grid-template-columns: repeat(2, 1fr); /* Two columns */
+                        grid-template-columns: repeat(3, 1fr); /* Two columns */
                         gap: 10px; /* Space between vouchers */
                     }
                     .voucher {font-family:Times New Roman,sans-serif;
                         border: 1px solid #ccc;
-                        padding: 0px 10px 9px; /* Reduced padding */
+                        padding: 10px; /* Reduced padding */
                         width: 80mm; /* Reduced width */
                         height: 35mm; /* Reduced height */
                         box-sizing: border-box;
